@@ -14,6 +14,11 @@ class Api::ClientsController < ApplicationController
     #render json: @client
     render  :show
   end
+  
+  def search_by_full_name
+    @clients = Api::Client.joins(:document_type, :gender, :city).where("lower(full_name) LIKE ?","%#{params[:full_name].downcase}%")
+    render json: @clients
+  end
 
   # POST /clients
   def create
