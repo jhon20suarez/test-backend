@@ -3,7 +3,7 @@ class Api::ClientsController < ApplicationController
 
   # GET /clients
   def index
-    @clients = Api::Client.joins(:document_type, :gender, :city).all
+    @clients = Api::Client.joins(:document_type, :gender, :city).page(params[:page]).order(:full_name).all
 
     #render json: @clients
     render :index
@@ -17,7 +17,7 @@ class Api::ClientsController < ApplicationController
   
   def search_by_full_name
     @clients = Api::Client.joins(:document_type, :gender, :city).where("lower(full_name) LIKE ?","%#{params[:full_name].downcase}%")
-    render json: @clients
+    render :index
   end
 
   # POST /clients
