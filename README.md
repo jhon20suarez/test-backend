@@ -1,24 +1,42 @@
-# README
+# Test WebAPP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Required software
 
-Things you may want to cover:
+* NodeJS 
 
-* Ruby version
+* Ruby v.2.6.6 min
 
-* System dependencies
+* Postgresql v.9.6 min.
 
-* Configuration
 
-* Database creation
+## Clone Repository
+Create Folder and clone el project `test-backend`
+```bash
+git clone https://github.com/jhon20suarez/test-backend.git
+```
+... a enter the folder.
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+To install on the default Rails stack:
+```bash
+rails install
+```
+# Configure Database
+Configure user, password, host and port with your Postgresql
+```bash
+/config/database.yml
+```
+# Create Database
+In your terminal
+```bash
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+All ready!!!
+```bash
+rails s
+```
 
-* Deployment instructions
-
-* ...
