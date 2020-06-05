@@ -20,7 +20,8 @@ git clone https://github.com/jhon20suarez/test-backend.git
 
 To install on the default Rails stack:
 ```bash
-rails install
+gem install bundle
+bundle
 ```
 # Configure Database
 Configure user, password, host and port with your Postgresql
